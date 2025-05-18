@@ -1,10 +1,10 @@
-# === Android/IntelliJ Specific ===
+# === Android Studio / IntelliJ Specific ===
 .gradle/
 .idea/
-local.properties
 *.iml
 *.ipr
 *.iws
+local.properties
 
 # === Build output ===
 /build/
@@ -15,14 +15,27 @@ local.properties
 .DS_Store
 Thumbs.db
 
-# === Gradle wrapper ===
+# === Gradle Wrapper ===
 /gradle/
-/gradlew
-/gradlew.bat
+gradlew
+gradlew.bat
 
-# === Misc ===
+# === Misc files ===
 *.log
 *.tmp
 
 # === Version control ===
 .git/
+
+# === Ignore OpenCV binaries, but keep XML/models ===
+opencv/**/*.so
+opencv/**/*.dll
+opencv/**/*.exe
+opencv/**/*.lib
+opencv/**/*.zip
+opencv/**/*.tar
+opencv/**/build/
+
+# Allow Haarcascade and model files in OpenCV
+!opencv/**/*.xml
+!opencv/**/*.tflite
