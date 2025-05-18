@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/shorts"
+        android:title="Shorts"
+        android:icon="@drawable/baseline_whatshot_24"/>
+
+    <!-- You can use this item for a FAB if needed, but it's better to keep it out of the menu -->
+    <item
+        android:id="@+id/fab"
+        android:title=""
+        android:enabled="false"/> <!-- Consider removing this if not used -->
+
+    <item
+        android:id="@+id/library"
+        android:title="Library"
+        android:icon="@drawable/baseline_library_music_24"/>
+
+    <item
+        android:id="@+id/account"
+        android:title="Account"
+        android:icon="@drawable/baseline_account_circle_24"/>
+
+</menu>

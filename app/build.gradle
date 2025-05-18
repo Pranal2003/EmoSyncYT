@@ -1,0 +1,79 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.googleGmsGoogleServices)
+}
+
+android {
+    namespace 'com.example.emosyncyt'
+    compileSdk 34
+
+    buildFeatures {
+        viewBinding true
+    }
+    defaultConfig {
+        applicationId "com.example.emosyncyt"
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        buildConfig true
+        aidl true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jni {
+                srcDirs 'src\\main\\jni', 'src\\main\\jnilibs'
+            }
+        }
+    }
+}
+
+dependencies {
+    //tensorflow
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.8.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-text:0.1.0'
+
+    // Networking library (Retrofit for making API calls)
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    // JSON parsing (Gson)
+    implementation libs.gson
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    // Glide for image loading
+    implementation libs.glide
+    implementation project(':opencv')
+    implementation libs.firebase.auth
+    implementation libs.firebase.firestore
+    implementation libs.compose.theme.adapter
+    annotationProcessor libs.compiler
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
