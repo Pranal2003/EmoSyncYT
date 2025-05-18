@@ -27,15 +27,20 @@ gradlew.bat
 # === Version control ===
 .git/
 
-# === Ignore OpenCV binaries, but keep XML/models ===
+# === Ignore OpenCV binaries and intermediate build outputs ===
+opencv/**/build/
+opencv/**/outputs/
+opencv/**/libs/
+opencv/**/*.a
 opencv/**/*.so
 opencv/**/*.dll
 opencv/**/*.exe
 opencv/**/*.lib
 opencv/**/*.zip
 opencv/**/*.tar
-opencv/**/build/
+opencv/**/*.apk
+opencv/**/*.aar
 
-# Allow Haarcascade and model files in OpenCV
+# === Allow important OpenCV files ===
 !opencv/**/*.xml
 !opencv/**/*.tflite
